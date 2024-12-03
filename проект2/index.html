@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Shoe Store</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Online Shoe Store</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h2>Find Your Perfect Pair</h2>
+    <p>High-quality shoes for every occasion.</p>
+    <button onclick="scrollToProducts()">Shop Now</button>
+  </section>
+
+  <section id="products" class="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="images/shoe1" alt="Shoe 1">
+        <h3>Sporty Runner</h3>
+        <p>$80.00</p>
+        <button onclick="addToCart('Sporty Runner', 80)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/shoe2.jpg" alt="Shoe 2">
+        <h3>Elegant Heels</h3>
+        <p>$120.00</p>
+        <button onclick="addToCart('Elegant Heels', 120)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/shoe3.jpg" alt="Shoe 3">
+        <h3>Casual Sneakers</h3>
+        <p>$60.00</p>
+        <button onclick="addToCart('Casual Sneakers', 60)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>We are passionate about footwear and dedicated to providing the best service to our customers.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>© 2024 Online Shoe Store. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+nav{
+    background-color: green;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+
+}
+nav ul li{
+    font-weight: bolder;
+    margin-right: 15px;
+
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+
+}
+.information{
+    background-color: orange;
+    color: white;
+    text-align: center;
+    padding: 55px 0;
+
+
+}
+.information p {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 20px;
+
+
+}
+.information h1{
+    font-weight: bold;
+    font-size: 35px;
+    
+}
+.images img{
+    width: 200px;
+    border: 7px solid green;
+    border-radius: 95px;
+    margin-right: 20px;
+    margin-top: 24px;
+}
+.images article{
+    display: flex;
+    align-items: flex-start;
+    margin: 50px auto;
+
+}
+.images article h3{
+    color: green;
+    margin-bottom: 10px;
+
+}
+.images article p {
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.images {
+    display: flex;
+    align-items: center;
+    margin-left: 12%;
+}
+.team{
+    background-color: blue;
+    text-align: center;
+    color: white;
+    border-top: 10px solid blue;
+    border-bottom: 10px solid #878787;
+    padding-top:  50px;
+    padding-bottom: 150px;
+    margin-top: 120px;
+}
+.team p {
+    width: 52%;
+    margin: 0 auto;
+    margin-bottom: 3%;
+    font-size: 18px;
+
+}
+.team input{
+    padding: 10 20px ;
+    padding-left: 7px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-right: 20px;
+
+}
+::placeholder {
+    color: white;
+}
+.team button {
+    background-color: #FF9100;
+    color: white;
+    font-weight: bold;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 10px 10px 9px 10px black rgba(0, 0, 0, 0,75);
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #565656;
+
+}
+footer ul {
+    list-style: none;
+    margin-right: 7%;
+    color: white;
+}
+footer ul li a{
+    margin-bottom: 10px;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+
+}
+#button {
+    display: inline-flex;
+    background-color: #FF9800;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 3opx;
+    right: 30px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+}
+#button:hover {
+    cursor: pointer;
+    background: #333;
+
+}
+#button:active {
+    background-color: #555;
+}
+#button.show {
+    opacity: 1;
+    visibility: visible;
+    
+}
