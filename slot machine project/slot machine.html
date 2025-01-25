@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Слот машина</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1a1a1d, #4e4e50);
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .slots {
+      font-size: 60px;
+      letter-spacing: 20px;
+      margin: 20px 0;
+      transition: all 0.3s ease-in-out;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      background-color: #f39c12;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #e67e22;
+    }
+    .balance {
+      font-size: 18px;
+      margin: 15px 0;
+    }
+    .message {
+      font-size: 22px;
+      margin: 15px 0;
+    }
+    .hidden {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎰 Слот машина</h1>
+  <div class="balance">Баланс: <span id="balance">100</span> 💰</div>
+  <div class="slots hidden">🍒 | 🍋 | 🔔</div>
+  <button id="spinButton">Завърти (10 💰)</button>
+  <p class="message" id="message"></p>
+
+  <script>
+    // Символи на слот машината
+    const symbols = ["🍒", "🍋", "🔔", "⭐", "💎"];
+    let balance = 300; // Начален баланс на играча
+
+    const slotsDiv = document.querySelector('.slots');
+    const balanceSpan = document.getElementById('balance');
+    const message = document.getElementById('message');
+    const spinButton = document.getElementById('spinButton');
+
+    function spinSlots() {
+      if (balance < 10) {
+        message.textContent = "😢 Нямате достатъчно баланс!";
+        return;
+      }
+
+      // Намаляване на баланса
+      balance -= 10;
+      balanceSpan.textContent = balance;
+
+      // Генериране на резултатите
+      const slot1 = symbols[Math.floor(Math.random() * symbols.length)];
+      const slot2 = symbols[Math.floor(Math.random() * symbols.length)];
+      const slot3 = symbols[Math.floor(Math.random() * symbols.length)];
+
+      // Показване на символите с анимация
+      slotsDiv.textContent = `${slot1} | ${slot2} | ${slot3}`;
+      slotsDiv.classList.remove('hidden');
+
+      // Проверка за печалба
+      setTimeout(() => {
+        if (slot1 === slot2 && slot2 === slot3) {
+          const prize = 50;
+          balance += prize;
+          balanceSpan.textContent = balance;
+          message.textContent = `🎉 Честито! Спечелихте ${prize} 💰!`;
+        } else {
+          message.textContent = "😢 Опитайте отново...";
+        }
+      }, 500);
+    }
+
+    // Събитие при натискане на бутона
+    spinButton.addEventListener('click', spinSlots);
+  </script>
+</body>
+</html>
